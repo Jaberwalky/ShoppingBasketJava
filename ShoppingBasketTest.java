@@ -5,12 +5,12 @@ import org.junit.Before;
 public class ShoppingBasketTest {
 
   ShoppingBasket basket;
-  Item item;
+  Purchasable item;
 
   @Before
   public void before(){
     basket = new ShoppingBasket();
-    item = new Item();
+    item = new Item("Soup", 149, true);
   }
 
   @Test

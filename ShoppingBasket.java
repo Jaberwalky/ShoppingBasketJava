@@ -3,22 +3,25 @@ import java.util.ArrayList;
 public class ShoppingBasket {
 
 
-    private ArrayList<Item> basket;
+    private ArrayList<Purchasable> basket;
 
     public ShoppingBasket(){
         this.basket = new ArrayList<>();
     }
 
+    public ArrayList<Purchasable> getItems(){
+        return this.basket;
+    }
 
     public int numberOfItems(){
         return this.basket.size();
     }
 
-    public void addItem(Item item){
+    public void addItem(Purchasable item){
       this.basket.add(item);
     }
 
-    public Item removeItem(){
+    public Purchasable removeItem(){
       return this.basket.remove(0);
     }
 
