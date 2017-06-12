@@ -26,4 +26,14 @@ public class Item implements Purchasable {
     this.promoStatus = status;
   }
 
+  public boolean equals(Item itemToCompare) {
+      if (!(itemToCompare instanceof Item)) {
+          return false;
+      }
+      Item toCompare = (Item) itemToCompare;
+      return this.name.equals(toCompare.getName())
+          && (this.price == toCompare.getPrice())
+          && (this.promoStatus == toCompare.getPromoStatus());
+  }
+
 }

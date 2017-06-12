@@ -4,25 +4,29 @@ import org.junit.Before;
 
 public class CheckoutTest{
 
-  Checkout checkout;
+  Item soup;
+  Item bread;
+  Item salmon;
+  Item chicken;
   ShoppingBasket basket;
-
+  
   @Before
   public void before(){
-    checkout = new Checkout();
-    basket = new ShoppingBasket(); 
+    soup = new Item("Soup", 129, true);
+    bread = new Item("Bread", 135, false);
+    salmon = new Item("Salmon", 449, false);
+    chicken = new Item("Roast Chicken", 1500, false);
+    basket = new ShoppingBasket();
   }
 
   @Test
-  public void canCalulateNonDiscountedTotal(){
-    Item item1 = new Item("Soup", 149, false);
-    Item item2 = new Item("Bread", 129, false);
-    basket.addItem(item1);
-    basket.addItem(item2);
-    assertEquals(278, checkout.total(basket));
-
+  public void canApply10PercentDiscount(){
+    basket.addItem(chicken);
+    basket.addItem(salmon);
+    basket.addItem(bread);
+    
+    basket.applyPercentageDiscount();
+    assertEquals(1875, BOGOF.applyBOGOF(basket));
   }
-
-
 
 }

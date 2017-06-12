@@ -33,5 +33,11 @@ public class ItemTest{
     assertEquals(false, item.getPromoStatus());
   }
 
+  @Test
+  public void testEqualsComparator(){
+    Item item2 = new Item("Soup", 149, true);
+    assertEquals(true, item.equals(item2));
+  }
+
 
 }
